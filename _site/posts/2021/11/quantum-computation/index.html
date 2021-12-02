@@ -19,7 +19,7 @@
 
 
 
-<title>Posts by Collection - Aman Agrawal</title>
+<title>Quantum Query Complexity - Aman Agrawal</title>
 
 
 
@@ -29,13 +29,15 @@
 
 <meta property="og:locale" content="en-In">
 <meta property="og:site_name" content="Aman Agrawal">
-<meta property="og:title" content="Posts by Collection">
+<meta property="og:title" content="Quantum Query Complexity">
 
 
-  <link rel="canonical" href="http://localhost:4000/collection-archive/">
-  <meta property="og:url" content="http://localhost:4000/collection-archive/">
+  <link rel="canonical" href="http://localhost:4000/posts/2021/11/quantum-computation/">
+  <meta property="og:url" content="http://localhost:4000/posts/2021/11/quantum-computation/">
 
 
+
+  <meta property="og:description" content="Query Model">
 
 
 
@@ -48,6 +50,9 @@
 
 
 
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2021-12-02T00:00:00-08:00">
 
 
 
@@ -159,6 +164,8 @@
 
 
 
+
+
 <div id="main" role="main">
   
 
@@ -230,46 +237,154 @@
   </div>
 
 
-  <div class="archive">
-    
-      <h1 class="page__title">Posts by Collection</h1>
-    
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Quantum Query Complexity">
+    <meta itemprop="description" content="Query Model">
+    <meta itemprop="datePublished" content="December 02, 2021">
     
 
-
-
-  
-    
-    
-      <h2 id="portfolio" class="archive__subtitle">portfolio</h2>
+    <div class="page__inner-wrap">
       
+        <header>
+          <h1 class="page__title" itemprop="headline">Quantum Query Complexity
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+  
+	  1 minute read
+	
+</p>
+          
+        
+        
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2021-12-02T00:00:00-08:00">December 02, 2021</time></p>
+        
+        
+             
+        
     
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <h1 id="query-model">Query Model</h1>
+
+<p>In Query Model, our task is to compute the function $f(x_1,x_2,….,x_n)$ by accessing $x_i$ through quering the orcale. Oracles can be thought of as a ‘black-box’ by which you can access some information regarding the input, we don’t really care about the internal setup in black-box, it can be easily constructed. To access input, algorithm is allowed to query the oracle to get information on input. Hence, the aim of the algorithm is to take minimum queries to compute $f(x)$ on any input $x$. The query complexity is used in deterministic as well as quantum algorithms.</p>
+
+<h1 id="query-complexity">Query Complexity</h1>
+
+<p>One should note that there is a difference between query complexity of an algorithm and that of a function. The query complexity of an algorithm would be the minimum number of queries that it takes to compute the function. The query complexity of a function is the minimum number of queries that an optimal algorithm takes in order to compute function $f(x)$ on any input $x$.</p>
+
+<h1 id="why-query-model">Why Query Model?</h1>
+
+<p>Now you might ask, why do we really need to know about query complexity? That’s a valid question to ask. There are couple of reasons that convince us to have an idea about query complexity. Firstly, it’s easy to analyse and a lot of known quantum algorithms like Shor’s algorithm and Grover’s search are based on query model. Secondly, it gives us a bound on time complexity of an algorithm. Finding the time complexity of a quantum algorithm is a tricky task but it turns out that if we are able to find the query complexity of the algorithm than we know that time complexity is larger than query complexity and hence gets some idea about the time complexity of an algorithm.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+
+
   
   
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
     
+      
+      
+      <a href="http://localhost:4000/tags/#quantum" class="page__taxonomy-item" rel="tag">quantum</a>
+    
+    </span>
+  </p>
+
+
+
+
+      </footer>
+
+      
+
+<section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/posts/2021/11/quantum-computation/" class="btn btn--twitter" title="Share on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/posts/2021/11/quantum-computation/" class="btn btn--facebook" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/posts/2021/11/quantum-computation/" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
       
 
 
+  <nav class="pagination">
+    
+      <a href="http://localhost:4000/posts/2021/10/hello-world/" class="pagination--pager" title="Hello World
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      
+      <div class="grid__wrapper">
+        
+          
 
 
 
-<div class="list__item">
+
+
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     
 
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="http://localhost:4000/portfolio/portfolio-1/" rel="permalink">Portfolio item number 1
+        <a href="http://localhost:4000/posts/2021/10/hello-world/" rel="permalink">Hello World
 </a>
       
     </h2>
     
     
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
 
+
+  
+	  less than 1 minute read
+	
+</p>
+    
+
+        
+         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2021-10-11T00:00:00-07:00">October 11, 2021</time></p>
         
 
     
-    <p class="archive__item-excerpt" itemprop="description"><p>Short description of portfolio item number 1<br /><img src="/images/500x300.png" /></p>
+    <p class="archive__item-excerpt" itemprop="description"><p>My first blog! Stay tuned for more.</p>
 </p>
     
     
@@ -278,289 +393,10 @@
   </article>
 </div>
 
-    
-  
-    
-      
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="http://localhost:4000/portfolio/portfolio-2/" rel="permalink">Portfolio item number 2
-</a>
-      
-    </h2>
-    
-    
-
         
-
-    
-    <p class="archive__item-excerpt" itemprop="description"><p>Short description of portfolio item number 2 <br /><img src="/images/500x300.png" /></p>
-</p>
-    
-    
-    
-
-  </article>
-</div>
-
-    
+      </div>
+    </div>
   
-
-  
-  
-    
-  
-    
-  
-
-  
-    
-    
-      <h2 id="talks" class="archive__subtitle">talks</h2>
-      
-    
-  
-  
-    
-      
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="http://localhost:4000/talks/2012-03-01-talk-1" rel="permalink">Talk 1 on Relevant Topic in Your Field
-</a>
-      
-    </h2>
-    
-    
-
-        
-         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2012-03-01T00:00:00-08:00">March 01, 2012</time></p>
-        
-
-    
-    <p class="archive__item-excerpt" itemprop="description"><p>This is a description of your talk, which is a markdown files that can be all markdown-ified like any other post. Yay markdown!</p>
-</p>
-    
-    
-    
-
-  </article>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="http://localhost:4000/talks/2013-03-01-tutorial-1" rel="permalink">Tutorial 1 on Relevant Topic in Your Field
-</a>
-      
-    </h2>
-    
-    
-
-        
-         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2013-03-01T00:00:00-08:00">March 01, 2013</time></p>
-        
-
-    
-    <p class="archive__item-excerpt" itemprop="description"><p><a href="http://exampleurl.com">More information here</a></p>
-
-</p>
-    
-    
-    
-
-  </article>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="http://localhost:4000/talks/2014-02-01-talk-2" rel="permalink">Talk 2 on Relevant Topic in Your Field
-</a>
-      
-    </h2>
-    
-    
-
-        
-         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2014-02-01T00:00:00-08:00">February 01, 2014</time></p>
-        
-
-    
-    <p class="archive__item-excerpt" itemprop="description"><p><a href="http://example2.com">More information here</a></p>
-
-</p>
-    
-    
-    
-
-  </article>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="http://localhost:4000/talks/2014-03-01-talk-3" rel="permalink">Conference Proceeding talk 3 on Relevant Topic in Your Field
-</a>
-      
-    </h2>
-    
-    
-
-        
-         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2014-03-01T00:00:00-08:00">March 01, 2014</time></p>
-        
-
-    
-    <p class="archive__item-excerpt" itemprop="description"><p>This is a description of your conference proceedings talk, note the different field in type. You can put anything in this field.</p>
-</p>
-    
-    
-    
-
-  </article>
-</div>
-
-    
-  
-
-  
-    
-    
-      <h2 id="teaching" class="archive__subtitle">teaching</h2>
-      
-    
-  
-  
-    
-      
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="http://localhost:4000/teaching/2014-spring-teaching-1" rel="permalink">Teaching experience 1
-</a>
-      
-    </h2>
-    
-    
-
-        
-          <p> Undergraduate course, <i>University 1, Department</i>, 2014 </p>
-        
-
-    
-    <p class="archive__item-excerpt" itemprop="description"><p>This is a description of a teaching experience. You can use markdown like any other post.</p>
-
-</p>
-    
-    
-    
-
-  </article>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="http://localhost:4000/teaching/2015-spring-teaching-1" rel="permalink">Teaching experience 2
-</a>
-      
-    </h2>
-    
-    
-
-        
-          <p> Workshop, <i>University 1, Department</i>, 2015 </p>
-        
-
-    
-    <p class="archive__item-excerpt" itemprop="description"><p>This is a description of a teaching experience. You can use markdown like any other post.</p>
-
-</p>
-    
-    
-    
-
-  </article>
-</div>
-
-    
-  
-
-  </div>
 </div>
 
 
