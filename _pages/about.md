@@ -16,4 +16,4 @@ I am interested in [Quantum Computation and its Complexity](https://en.wikipedia
 
 I am also interested in [Neural Networks](https://en.wikipedia.org/wiki/Artificial_neural_network) and Deep Learning. Currently, I am exploring [Generative Adversarial Networks](https://en.wikipedia.org/wiki/Generative_adversarial_network). The most interesting part of GANs for me is the wide variety of applications we see combined with logic and some maths!
 
-Apart from academics, I am fond of watching sports and playing keyboard.
+Apart from academics, I am fond of watching sports and playing piano.
