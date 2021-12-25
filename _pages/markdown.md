@@ -22,3 +22,7 @@ redirect_from:
 * [Deep Learning Drizzle](https://deep-learning-drizzle.github.io/) 
     * This site contains the links for courses ranging from basics to more advanced stuffs. 
     * For Programming, I earlier use to code in Tensorflow 2 (TF2) and Keras but shifted to PyTorch. I will recommend the [tutorials](https://pytorch.org/tutorials/) of PyTorch from their official website. For TF2 and Keras, look at the courses by deeplearning.ai in Coursera. 
+
+## Building your own website 
+
+* Check out this [repo](https://github.com/academicpages/academicpages.github.io).
