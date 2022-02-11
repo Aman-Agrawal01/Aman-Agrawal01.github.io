@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-10T22:24:20-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Aman Agrawal</title><subtitle>personal description</subtitle><author><name>Aman Agrawal</name><email>amanagr@iitk.ac.in</email></author><entry><title type="html">Generative Adversarial Networks</title><link href="http://localhost:4000/posts/2022/2/gans/" rel="alternate" type="text/html" title="Generative Adversarial Networks" /><published>2022-02-11T00:00:00-08:00</published><updated>2022-02-11T00:00:00-08:00</updated><id>http://localhost:4000/posts/2022/2/blog</id><content type="html" xml:base="http://localhost:4000/posts/2022/2/gans/">&lt;p&gt;Generative Adversarial Networks or in short GAN’s have the most interesting and appealing applications in my opinion ranging from generating new samples for data augmentation to create deepfakes or transforming images from one domain to the other domain. So, I thought of writing about this and appreciate the math behind it.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-10T23:19:16-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Aman Agrawal</title><subtitle>personal description</subtitle><author><name>Aman Agrawal</name><email>amanagr@iitk.ac.in</email></author><entry><title type="html">Generative Adversarial Networks</title><link href="http://localhost:4000/posts/2022/2/gans/" rel="alternate" type="text/html" title="Generative Adversarial Networks" /><published>2022-02-11T00:00:00-08:00</published><updated>2022-02-11T00:00:00-08:00</updated><id>http://localhost:4000/posts/2022/2/blog</id><content type="html" xml:base="http://localhost:4000/posts/2022/2/gans/">&lt;p&gt;Generative Adversarial Networks or in short GAN’s have the most interesting and appealing applications in my opinion ranging from generating new samples for data augmentation to create deepfakes or transforming images from one domain to the other domain. So, I thought of writing about this and appreciate the math behind it.&lt;/p&gt;
 
 &lt;p&gt;This blog requires the basic understanding of Probability and Statistics and Neural Nets.&lt;/p&gt;
 
@@ -30,7 +30,51 @@
 
 \[\begin{equation*}
  = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{z \sim p_Z(z)}[-log(1-D(G(z)))]\
-\end{equation*}\]</content><author><name>Aman Agrawal</name><email>amanagr@iitk.ac.in</email></author><category term="ML" /><summary type="html">Generative Adversarial Networks or in short GAN’s have the most interesting and appealing applications in my opinion ranging from generating new samples for data augmentation to create deepfakes or transforming images from one domain to the other domain. So, I thought of writing about this and appreciate the math behind it.</summary></entry><entry><title type="html">Quantum Query Complexity</title><link href="http://localhost:4000/posts/2021/11/query_complexity/" rel="alternate" type="text/html" title="Quantum Query Complexity" /><published>2021-12-02T00:00:00-08:00</published><updated>2021-12-02T00:00:00-08:00</updated><id>http://localhost:4000/posts/2021/11/blog</id><content type="html" xml:base="http://localhost:4000/posts/2021/11/query_complexity/">&lt;p&gt;My first official blog! 
+\end{equation*}\]
+
+&lt;p&gt;The Generator $G$ and Discriminator $D$ play the two-player mini-max game with the loss function $\mathcal{L}$. Generator wants $D(G(z))$ to be close to 1 while Discriminator $D$ wants it to close to 0 and $D(x)$ close to 1. So, $G$ wants to maximise the $\mathcal{L}$ while $D$ wants to minimise $\mathcal{L}$.&lt;/p&gt;
+
+\[\begin{equation*}
+    \max_{G} \min_{D} \mathcal{L}(\theta_g,\theta_d)
+\end{equation*}\]
+
+&lt;h1 id=&quot;analysis&quot;&gt;Analysis&lt;/h1&gt;
+
+&lt;p&gt;Let’s see why this works. First, let’s check what is the optimal discriminator for us. Fix teh Generator $G$.&lt;/p&gt;
+
+&lt;p&gt;\(\begin{equation*}
+  \mathcal{L}(\theta_g,\theta_d) = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D(x))]
+\end{equation*}\)
+\(\begin{equation*}
+  = \int_x p_d(x)(-log(D(x))) + p_g(x)(-log(1-D(x))) \,dx 
+\end{equation*}\)&lt;/p&gt;
+
+&lt;p&gt;Now, differentiating this integral with respect to $D(x)$ and equating with zero gives the optimal Discriminator $D^\ast(x)$. (Exercise for the reader). Assume the paramters of $D^\ast(x)$ be $\theta^\ast_d$.&lt;/p&gt;
+
+\[\begin{equation*}
+  D^\ast(x) = \frac{p_d(x)}{p_d(x)+p_g(x)}
+\end{equation*}\]
+
+&lt;p&gt;Now, let’s look at the Generator part.&lt;/p&gt;
+
+&lt;p&gt;\(\begin{equation*}
+  \mathcal{L}(\theta_g,\theta^\ast_d) = \mathbb{E}_{x \sim p_d(x)}[-log(D^\ast(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D^\ast(x))]
+\end{equation*}\)
+\(\begin{equation*}
+  = \mathbb{E}_{x \sim p_d(x)}[-log(p_d(x))+log(p_d(x)+p_g(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(p_g(x))+log(p_d(x)+p_g(x))]
+\end{equation*}\)
+\(\begin{equation*}
+  = 2*log(2) - D_{KL}(p_d||\frac{p_d+p_g}{2}) - D_{KL}(p_g||\frac{p_d+p_g}{2})
+\end{equation*}\)
+\(\begin{equation*}
+  = 2*log(2) - 2*JSD(p_d||p_g)
+\end{equation*}\)&lt;/p&gt;
+
+&lt;p&gt;where $D_{KL}$ and $JSD$ are KL Divergence and Jenson Shannon Divergence respectively. So, $JSD$ is a non-negative quantity and attains zero when both the distributions are equal. Since, the Generator $G$ wants to maximise the loss function hence the global optimum will attain when $p_g = p_d$ and that’s what we wanted.&lt;/p&gt;
+
+&lt;h1 id=&quot;drawback&quot;&gt;Drawback&lt;/h1&gt;
+
+&lt;p&gt;The drawback of GANs is sometimes the Generator is able to generate only handful of samples and not able to produce variety of samples. This from of failure is known as Mode Collapse.&lt;/p&gt;</content><author><name>Aman Agrawal</name><email>amanagr@iitk.ac.in</email></author><category term="ML" /><summary type="html">Generative Adversarial Networks or in short GAN’s have the most interesting and appealing applications in my opinion ranging from generating new samples for data augmentation to create deepfakes or transforming images from one domain to the other domain. So, I thought of writing about this and appreciate the math behind it.</summary></entry><entry><title type="html">Quantum Query Complexity</title><link href="http://localhost:4000/posts/2021/11/query_complexity/" rel="alternate" type="text/html" title="Quantum Query Complexity" /><published>2021-12-02T00:00:00-08:00</published><updated>2021-12-02T00:00:00-08:00</updated><id>http://localhost:4000/posts/2021/11/blog</id><content type="html" xml:base="http://localhost:4000/posts/2021/11/query_complexity/">&lt;p&gt;My first official blog! 
 I have been learning query complexity and thought of writing it in a blog. This blog requires some basic understanding of quantum computing specifically the postulates of quantum mechanics.&lt;/p&gt;
 
 &lt;h1 id=&quot;query-model&quot;&gt;Query Model&lt;/h1&gt;
