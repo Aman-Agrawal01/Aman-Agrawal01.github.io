@@ -19,7 +19,7 @@
 
 
 
-<title>Posts by Tags - Aman Agrawal</title>
+<title>Generative Adversarial Networks - Aman Agrawal</title>
 
 
 
@@ -29,13 +29,15 @@
 
 <meta property="og:locale" content="en-In">
 <meta property="og:site_name" content="Aman Agrawal">
-<meta property="og:title" content="Posts by Tags">
+<meta property="og:title" content="Generative Adversarial Networks">
 
 
-  <link rel="canonical" href="http://localhost:4000/tags/">
-  <meta property="og:url" content="http://localhost:4000/tags/">
+  <link rel="canonical" href="http://localhost:4000/posts/2022/2/gans/">
+  <meta property="og:url" content="http://localhost:4000/posts/2022/2/gans/">
 
 
+
+  <meta property="og:description" content="Generative Adversarial Networks or in short GAN’s have the most interesting and appealing applications in my opinion ranging from generating new samples for data augmentation to create deepfakes or transforming images from one domain to the other domain. So, I thought of writing about this and appreciate the math behind it.">
 
 
 
@@ -48,6 +50,9 @@
 
 
 
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2022-02-11T00:00:00-08:00">
 
 
 
@@ -162,6 +167,8 @@
 
 
 
+
+
 <div id="main" role="main">
   
 
@@ -233,167 +240,149 @@
   </div>
 
 
-  <div class="archive">
-    
-      <h1 class="page__title">Posts by Tags</h1>
-    
-    
-<!--
-# Jekyll Group-By-Array 0.1.0
-# https://github.com/mushishi78/jekyll-group-by-array
-# © 2015 Max White <mushishi78@gmail.com>
-# MIT License
--->
-
-<!-- Initialize -->
-
-
-
-
-<!-- Map -->
-
-
-<!-- Flatten -->
-
-
-<!-- Uniq -->
-
-
-
-<!-- If not equal to previous then it must be unique as sorted -->
-
-
-<!-- Push to group_names -->
-
-
-
-
-
-
-<!-- If not equal to previous then it must be unique as sorted -->
-
-
-<!-- Push to group_names -->
-
-
-
-
-
-
-<!-- If not equal to previous then it must be unique as sorted -->
-
-
-<!-- Push to group_names -->
-
-
-
-
-
-
-<!-- If not equal to previous then it must be unique as sorted -->
-
-
-<!-- Push to group_names -->
-
-
-
-
-
-
-
-<!-- group_items -->
-
-
-<!-- Collect if contains -->
-
-
-
-<!-- Push to group_items -->
-
-
-
-<!-- Collect if contains -->
-
-
-
-<!-- Push to group_items -->
-
-
-
-<!-- Collect if contains -->
-
-
-
-<!-- Push to group_items -->
-
-
-
-<!-- Collect if contains -->
-
-
-
-<!-- Push to group_items -->
-
-
-
-
-  
-  <h2 id="ml" class="archive__subtitle">ML</h2>
-  
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Generative Adversarial Networks">
+    <meta itemprop="description" content="Generative Adversarial Networks or in short GAN’s have the most interesting and appealing applications in my opinion ranging from generating new samples for data augmentation to create deepfakes or transforming images from one domain to the other domain. So, I thought of writing about this and appreciate the math behind it.">
+    <meta itemprop="datePublished" content="February 11, 2022">
     
 
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-
-    <h2 class="archive__item-title" itemprop="headline">
+    <div class="page__inner-wrap">
       
-        <a href="http://localhost:4000/posts/2022/2/gans/" rel="permalink">Generative Adversarial Networks
-</a>
-      
-    </h2>
-    
-    
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+        <header>
+          <h1 class="page__title" itemprop="headline">Generative Adversarial Networks
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
 
 
   
 	  4 minute read
 	
 </p>
+          
+        
+        
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2022-02-11T00:00:00-08:00">February 11, 2022</time></p>
+        
+        
+             
+        
     
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>Generative Adversarial Networks or in short GAN’s have the most interesting and appealing applications in my opinion ranging from generating new samples for data augmentation to create deepfakes or transforming images from one domain to the other domain. So, I thought of writing about this and appreciate the math behind it.</p>
+
+<p>This blog requires the basic understanding of Probability and Statistics and Neural Nets.</p>
+
+<h1 id="problem-statement">Problem Statement</h1>
+
+<p>Suppose, we are given the samples from a distribution and distribution is unknown to us. These samples could be anything from images to audio. Our aim is to generate more samples that looks like they came from the same distribution. In order to do so, we try to model a distribution that approximates the target distribution.</p>
+
+<h1 id="basics">Basics</h1>
+
+<p>Adversarial refers to conflict/opposition. So, GANs consists of ‘adversarial’ training between two parties (in our case, the parties would be neural nets) such that we will be able to ‘generate’ new samples from the data. Those parties are Generator and Discriminator.</p>
+
+<p>The work of the Generator is to transform a easy to sample distribution (like a D-dimensional Normal Distribution etc.) to a probability distribution that we want as close as the target distribution. Discriminator is a Binary Classifier which gives the probability whether the sample came from the data. So, both these parties conflict with each other in such a way so that the Generator tries to generate more realistic samples by the feedback that Discriminator gives on the samples.</p>
+
+<p>So, this is some kind of Police-Scammer case, where Scammer (Generator) tries to generate fake currency and Police (Discriminator) distinguishes fake and real currency and we want Scammer to generate realistic currency such that the Police gets confused between the real and fake. So, we can see some kind of adversary.</p>
+
+<p>Why do we want both these parties to get trained? It’s because we neither want the tough Discriminator which won’t help Generator to progress nor a poor Discriminator by which Generator won’t produce realistic samples.</p>
+
+<h1 id="notations">Notations</h1>
+
+<p>Say the data is denoted as $x$. The data underlies under the distribution $p_d$. Let the easy to sample distribution be denoted as $p_z$, distribution transformed be denoted as $p_g$ and the parameters of Generator $G$ and Discriminator $D$ denoted by \(\theta_g\) and $\theta_d$ respectively. The loss function is denoted as $\mathcal{L}$.</p>
+
+<h1 id="loss-function">Loss function</h1>
+
+<p>Let’s use BCE (Binary Cross-Entropy) loss in this case.</p>
+
+\[\begin{equation*}
+\mathcal{L}(\theta_g,\theta_d) = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D(x))]\
+\end{equation*}\]
+
+\[\begin{equation*}
+ = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{z \sim p_Z(z)}[-log(1-D(G(z)))]\
+\end{equation*}\]
 
         
-         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2022-02-11T00:00:00-08:00">February 11, 2022</time></p>
+      </section>
+
+      <footer class="page__meta">
+        
         
 
-    
-    <p class="archive__item-excerpt" itemprop="description"><p>Generative Adversarial Networks or in short GAN’s have the most interesting and appealing applications in my opinion ranging from generating new samples for data augmentation to create deepfakes or transforming images from one domain to the other domain. So, I thought of writing about this and appreciate the math behind it.</p>
 
-</p>
-    
-    
-    
+  
 
+
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="http://localhost:4000/tags/#ml" class="page__taxonomy-item" rel="tag">ML</a>
+    
+    </span>
+  </p>
+
+
+
+
+      </footer>
+
+      
+
+<section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/posts/2022/2/gans/" class="btn btn--twitter" title="Share on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/posts/2022/2/gans/" class="btn btn--facebook" title="Share on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/posts/2022/2/gans/" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+      
+
+
+  <nav class="pagination">
+    
+      <a href="http://localhost:4000/posts/2021/11/query_complexity/" class="pagination--pager" title="Quantum Query Complexity
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
   </article>
-</div>
 
   
-
   
-  <h2 id="complexity" class="archive__subtitle">complexity</h2>
-  
-    
+    <div class="page__related">
+      
+      <div class="grid__wrapper">
+        
+          
 
 
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     
 
@@ -430,18 +419,14 @@ I have been learning query complexity and thought of writing it in a blog. This 
   </article>
 </div>
 
-  
-
-  
-  <h2 id="cool-posts" class="archive__subtitle">cool posts</h2>
-  
-    
+        
+          
 
 
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     
 
@@ -476,57 +461,10 @@ I have been learning query complexity and thought of writing it in a blog. This 
   </article>
 </div>
 
-  
-
-  
-  <h2 id="quantum" class="archive__subtitle">quantum</h2>
-  
-    
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="http://localhost:4000/posts/2021/11/query_complexity/" rel="permalink">Quantum Query Complexity
-</a>
-      
-    </h2>
-    
-    
-      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
-
-
-  
-	  6 minute read
-	
-</p>
-    
-
         
-         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Published:</strong> <time datetime="2021-12-02T00:00:00-08:00">December 02, 2021</time></p>
-        
-
-    
-    <p class="archive__item-excerpt" itemprop="description"><p>My first official blog! 
-I have been learning query complexity and thought of writing it in a blog. This blog requires some basic understanding of quantum computing specifically the postulates of quantum mechanics.</p>
-
-</p>
-    
-    
-    
-
-  </article>
-</div>
-
+      </div>
+    </div>
   
-
-  </div>
 </div>
 
 

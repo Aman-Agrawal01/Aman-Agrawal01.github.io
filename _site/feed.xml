@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-25T00:01:54-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Aman Agrawal</title><subtitle>personal description</subtitle><author><name>Aman Agrawal</name><email>amanagr@iitk.ac.in</email></author><entry><title type="html">Quantum Query Complexity</title><link href="http://localhost:4000/posts/2021/11/query_complexity/" rel="alternate" type="text/html" title="Quantum Query Complexity" /><published>2021-12-02T00:00:00-08:00</published><updated>2021-12-02T00:00:00-08:00</updated><id>http://localhost:4000/posts/2021/11/blog</id><content type="html" xml:base="http://localhost:4000/posts/2021/11/query_complexity/">&lt;p&gt;My first official blog! 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-10T22:24:20-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Aman Agrawal</title><subtitle>personal description</subtitle><author><name>Aman Agrawal</name><email>amanagr@iitk.ac.in</email></author><entry><title type="html">Generative Adversarial Networks</title><link href="http://localhost:4000/posts/2022/2/gans/" rel="alternate" type="text/html" title="Generative Adversarial Networks" /><published>2022-02-11T00:00:00-08:00</published><updated>2022-02-11T00:00:00-08:00</updated><id>http://localhost:4000/posts/2022/2/blog</id><content type="html" xml:base="http://localhost:4000/posts/2022/2/gans/">&lt;p&gt;Generative Adversarial Networks or in short GAN’s have the most interesting and appealing applications in my opinion ranging from generating new samples for data augmentation to create deepfakes or transforming images from one domain to the other domain. So, I thought of writing about this and appreciate the math behind it.&lt;/p&gt;
+
+&lt;p&gt;This blog requires the basic understanding of Probability and Statistics and Neural Nets.&lt;/p&gt;
+
+&lt;h1 id=&quot;problem-statement&quot;&gt;Problem Statement&lt;/h1&gt;
+
+&lt;p&gt;Suppose, we are given the samples from a distribution and distribution is unknown to us. These samples could be anything from images to audio. Our aim is to generate more samples that looks like they came from the same distribution. In order to do so, we try to model a distribution that approximates the target distribution.&lt;/p&gt;
+
+&lt;h1 id=&quot;basics&quot;&gt;Basics&lt;/h1&gt;
+
+&lt;p&gt;Adversarial refers to conflict/opposition. So, GANs consists of ‘adversarial’ training between two parties (in our case, the parties would be neural nets) such that we will be able to ‘generate’ new samples from the data. Those parties are Generator and Discriminator.&lt;/p&gt;
+
+&lt;p&gt;The work of the Generator is to transform a easy to sample distribution (like a D-dimensional Normal Distribution etc.) to a probability distribution that we want as close as the target distribution. Discriminator is a Binary Classifier which gives the probability whether the sample came from the data. So, both these parties conflict with each other in such a way so that the Generator tries to generate more realistic samples by the feedback that Discriminator gives on the samples.&lt;/p&gt;
+
+&lt;p&gt;So, this is some kind of Police-Scammer case, where Scammer (Generator) tries to generate fake currency and Police (Discriminator) distinguishes fake and real currency and we want Scammer to generate realistic currency such that the Police gets confused between the real and fake. So, we can see some kind of adversary.&lt;/p&gt;
+
+&lt;p&gt;Why do we want both these parties to get trained? It’s because we neither want the tough Discriminator which won’t help Generator to progress nor a poor Discriminator by which Generator won’t produce realistic samples.&lt;/p&gt;
+
+&lt;h1 id=&quot;notations&quot;&gt;Notations&lt;/h1&gt;
+
+&lt;p&gt;Say the data is denoted as $x$. The data underlies under the distribution $p_d$. Let the easy to sample distribution be denoted as $p_z$, distribution transformed be denoted as $p_g$ and the parameters of Generator $G$ and Discriminator $D$ denoted by \(\theta_g\) and $\theta_d$ respectively. The loss function is denoted as $\mathcal{L}$.&lt;/p&gt;
+
+&lt;h1 id=&quot;loss-function&quot;&gt;Loss function&lt;/h1&gt;
+
+&lt;p&gt;Let’s use BCE (Binary Cross-Entropy) loss in this case.&lt;/p&gt;
+
+\[\begin{equation*}
+\mathcal{L}(\theta_g,\theta_d) = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D(x))]\
+\end{equation*}\]
+
+\[\begin{equation*}
+ = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{z \sim p_Z(z)}[-log(1-D(G(z)))]\
+\end{equation*}\]</content><author><name>Aman Agrawal</name><email>amanagr@iitk.ac.in</email></author><category term="ML" /><summary type="html">Generative Adversarial Networks or in short GAN’s have the most interesting and appealing applications in my opinion ranging from generating new samples for data augmentation to create deepfakes or transforming images from one domain to the other domain. So, I thought of writing about this and appreciate the math behind it.</summary></entry><entry><title type="html">Quantum Query Complexity</title><link href="http://localhost:4000/posts/2021/11/query_complexity/" rel="alternate" type="text/html" title="Quantum Query Complexity" /><published>2021-12-02T00:00:00-08:00</published><updated>2021-12-02T00:00:00-08:00</updated><id>http://localhost:4000/posts/2021/11/blog</id><content type="html" xml:base="http://localhost:4000/posts/2021/11/query_complexity/">&lt;p&gt;My first official blog! 
 I have been learning query complexity and thought of writing it in a blog. This blog requires some basic understanding of quantum computing specifically the postulates of quantum mechanics.&lt;/p&gt;
 
 &lt;h1 id=&quot;query-model&quot;&gt;Query Model&lt;/h1&gt;
